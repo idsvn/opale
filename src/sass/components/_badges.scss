@@ -25,7 +25,7 @@ span.private,
   padding: (variables.$badge-padding-v + 1px) (variables.$badge-padding-h + 1px);
   border: 0;
   background: variables.$brand-warning;
-  color: variables.$brand-text;
+  color: variables.shade(variables.$brand-warning, 950);
 
   h3 & {
     font-size: variables.$font-size-small-px;
@@ -46,8 +46,8 @@ tr.group .count,
 }
 
 .badge-status-locked {
-  border-color: variables.$gray-600;
-  color: variables.$gray-600;
+  border-color: variables.$gray-750;
+  color: variables.$gray-750;
 }
 
 .badge-status-closed {

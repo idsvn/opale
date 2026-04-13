@@ -12,7 +12,7 @@ div.flash,
 .conflict {
   margin-bottom: variables.$line-height-computed;
   padding: variables.$padding-large-vertical variables.$padding-large-horizontal;
-  border: 1px solid;
+  border: 1px solid variables.$flash-warning-border;
   border-radius: variables.$border-radius-large;
 
   &:not(:has(svg)) {

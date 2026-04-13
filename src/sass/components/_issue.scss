@@ -196,7 +196,7 @@
 
     > tbody > tr {
       th {
-        color: variables.$gray-700;
+        color: variables.$gray-750;
         font-weight: variables.$font-weight-normal;
       }
 
@@ -281,7 +281,7 @@
     .label {
       box-sizing: border-box;
       float: left;
-      color: variables.$gray-700;
+      color: variables.$gray-750;
     }
 
     .value {
@@ -392,7 +392,7 @@ div.attachments:not(.box) {
   }
 
   span.author {
-    color: variables.$gray-700;
+    color: variables.$gray-750;
     font-size: variables.$font-size-small;
   }
 }
@@ -598,7 +598,7 @@ div.thumbnails {
     > a.journal-link {
       padding-left: variables.$issue-attribute-padding-h;
       opacity: 1;
-      color: variables.$gray-700;
+      color: variables.$gray-750;
 
       &::before {
         content: "";
@@ -613,7 +613,7 @@ div.thumbnails {
     padding: variables.$bubble-padding-vertical variables.$bubble-padding-horizontal;
     border-radius: variables.$panel-border-radius variables.$panel-border-radius 0 0;
     background-color: variables.$bubble-bg;
-    color: variables.$gray-700;
+    color: variables.$gray-750;
     font-size: variables.$font-size-list;
     font-weight: variables.$font-weight-normal;
 
@@ -626,7 +626,7 @@ div.thumbnails {
     }
 
     .journal-link {
-      color: variables.$gray-700;
+      color: variables.$gray-750;
     }
 
     .update-info {
@@ -818,7 +818,7 @@ span.private {
   padding: variables.$tracker-inline-padding;
   border-radius: variables.$border-radius-small;
   background: variables.$brand-warning;
-  color: variables.$brand-text;
+  color: variables.shade(variables.$brand-warning, 950);
   font-size: variables.$font-size-small;
   font-weight: variables.$font-weight-bold;
   text-transform: uppercase;
@@ -863,7 +863,7 @@ span.private {
 
       margin: 0;
       padding: variables.$padding-base-vertical variables.$padding-base-horizontal;
-      color: variables.$gray-700;
+      color: variables.$gray-750;
 
       > a:first-child {
         font-family: variables.$font-family-monospace;

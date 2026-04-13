@@ -161,8 +161,18 @@
   form {
     display: inline-block;
 
+    label {
+      display: inline-block;
+      height: variables.$input-height-base;
+      margin-right: -5px;
+      padding: 0 variables.$padding-small-horizontal;
+      border-radius: variables.$border-radius-base 0 0 variables.$border-radius-base;
+      background-color: variables.$quick-search-label-bg;
+    }
+
     input {
       width: variables.$quick-search-width;
+      border-radius: variables.$quick-search-border-radius;
     }
   }
 

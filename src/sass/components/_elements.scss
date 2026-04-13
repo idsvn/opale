@@ -348,7 +348,7 @@ a.close-icon:not(:has(svg)) {
   th.line-num {
     border-color: color.adjust(variables.$body-bg, $lightness: -10%);
     background-color: color.adjust(variables.$body-bg, $lightness: -5%);
-    color: variables.$gray-700;
+    color: variables.$gray-750;
   }
 
   th.line-num,
@@ -528,7 +528,7 @@ table.projects {
 
   tbody tr {
     &.subtotal {
-      color: variables.$gray-700;
+      color: variables.$gray-750;
       font-style: italic;
 
       td.hours {
@@ -699,7 +699,7 @@ div#version-summary {
 
 tr.message {
   &.locked {
-    color: variables.$gray-700;
+    color: variables.$gray-750;
   }
 
   &.sticky td.subject {
@@ -760,7 +760,7 @@ div.table-list.boards {
     > p {
       margin-bottom: 0;
       padding: variables.$bubble-padding-vertical variables.$bubble-padding-horizontal;
-      color: variables.$gray-700;
+      color: variables.$gray-750;
       font-size: variables.$font-size-list;
 
       a {
@@ -900,7 +900,7 @@ div.table-list.boards {
   #content > h2,
   #content > h4 {
     + p {
-      color: variables.$gray-700;
+      color: variables.$gray-750;
 
       em {
         font-style: normal;
@@ -978,7 +978,7 @@ div.news .reaction {
 }
 
 .author {
-  color: variables.$gray-700;
+  color: variables.$gray-750;
 
   .flyout-menu & {
     color: inherit;

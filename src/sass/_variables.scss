@@ -47,11 +47,13 @@ $shade-map: (
   50:                           87.5%,
   100:                          80%,
   200:                          65%,
+  250:                          50%,
   300:                          40%,
   400:                          20%,
   500:                          0%,
   600:                          20%,
   700:                          40%,
+  750:                          50%,
   800:                          65%,
   900:                          80%,
   950:                          87.5%
@@ -66,18 +68,20 @@ $shade-map: (
 $gray-50:                       shade($gray, 50) !default;
 $gray-100:                      shade($gray, 100) !default;
 $gray-200:                      shade($gray, 200) !default;
+$gray-250:                      shade($gray, 250) !default;
 $gray-300:                      shade($gray, 300) !default;
 $gray-400:                      shade($gray, 400) !default;
 $gray-500:                      $gray !default;
 $gray-600:                      shade($gray, 600) !default;
 $gray-700:                      shade($gray, 700) !default;
+$gray-750:                      shade($gray, 750) !default;
 $gray-800:                      shade($gray, 800) !default;
 $gray-900:                      shade($gray, 900) !default;
 $gray-950:                      shade($gray, 950) !default;
 
 $brand-primary:                 #628db6 !default;
 $brand-text:                    $white !default;
-$brand-accent:                  shade($brand-primary, 100) !default;
+$brand-accent:                  shade($brand-primary, 50) !default;
 
 $brand-info:                    $blue !default;
 $brand-success:                 $green !default;
@@ -101,9 +105,9 @@ $link-color:                    $blue !default;
 $link-hover-color:              $red !default;
 $link-hover-decoration:         underline !default;
 $link-closed-decoration:        line-through !default;
-$link-color-issue-closed:       $gray-700 !default;
-$link-color-project-closed:     $gray-700 !default;
-$link-color-user-locked:        $gray-700 !default;
+$link-color-issue-closed:       $gray-750 !default;
+$link-color-project-closed:     $gray-750 !default;
+$link-color-user-locked:        $gray-750 !default;
 
 
 // Typography
@@ -203,8 +207,8 @@ $component-bg:                  $gray-50 !default;
 $component-border:              $gray-300 !default;
 
 $component-active-color:        $brand-text !default;
-$component-active-bg:           $brand-primary !default;
-$component-active-border:       $brand-primary !default;
+$component-active-bg:           shade($brand-primary, 600) !default;
+$component-active-border:       $component-active-bg !default;
 
 $font-size-list:                .92em !default;
 
@@ -246,6 +250,18 @@ $status-default-color:          $brand-text !default;
 $status-default-colors-map: (
   status-1: (
     background:                 shade($blue, 500),
+    color:                      $white
+  ),
+  status-2: (
+    background:                 shade($orange, 500),
+    color:                      shade($orange, 950)
+  ),
+  status-3: (
+    background:                 shade($green, 600),
+    color:                      $white
+  ),
+  status-4: (
+    background:                 shade($purple, 500),
     color:                      $white
   ),
   closed: (
@@ -372,31 +388,31 @@ $tracker-default-text:          $white !default;
 
 $tracker-default-colors-map: (
   1: (
-    background:                 $red,
+    background:                 shade($red, 500),
     color:                      $white
   ),
   2: (
-    background:                 $blue,
+    background:                 shade($blue, 500),
     color:                      $white
   ),
   3: (
-    background:                 $green,
+    background:                 shade($green, 600),
     color:                      $white
   ),
   4: (
-    background:                 $purple,
+    background:                 shade($purple, 600),
     color:                      $white
   ),
   5: (
-    background:                 $orange,
-    color:                      $white
+    background:                 shade($orange, 500),
+    color:                      shade($orange, 950)
   ),
   6: (
-    background:                 $teal,
-    color:                      $white
+    background:                 shade($teal, 500),
+    color:                      shade($teal, 950)
   ),
   7: (
-    background:                 $indigo,
+    background:                 shade($indigo, 500),
     color:                      $white
   )
 ) !default;
@@ -419,7 +435,7 @@ $journal-old-value-color:       color.adjust(shade($orange, 800), $saturation: 2
 $journal-old-value-bg:          color.adjust(shade($orange, 50), $saturation: 50%) !default;
 $journal-new-value-color:       color.adjust(shade($green, 800), $saturation: 25%) !default;
 $journal-new-value-bg:          color.adjust(shade($green, 50), $saturation: 50%) !default;
-$journal-update-info-color:     $orange !default;
+$journal-update-info-color:     shade($orange, 700) !default;
 
 
 // Changesets
@@ -557,9 +573,11 @@ $flyout-menu-header-bg:         shade($header-bg, 800) !default;
 $flyout-menu-header-border:     shade($header-bg, 800) !default;
 $flyout-menu-header-text:       $white !default;
 
+$quick-search-label-bg:         $top-menu-bg;
 $quick-search-width:            200px !default;
 $quick-search-border:           $input-border !default;
 $quick-search-border-focus:     shade($header-bg, 800) !default;
+$quick-search-border-radius:    0 $border-radius-small $border-radius-small 0;
 $quick-search-box-width:        300px !default;
 $quick-search-dropdown-bg:      $body-bg !default;
 $quick-search-dropdown-border:  $gray-400 !default;
@@ -597,9 +615,9 @@ $pagination-hover-color:        $gray-900 !default;
 $pagination-hover-bg:           $gray-300 !default;
 $pagination-hover-border:       $gray-300 !default;
 
-$pagination-active-color:       $brand-text !default;
-$pagination-active-bg:          $brand-primary !default;
-$pagination-active-border:      $brand-primary !default;
+$pagination-active-color:       $component-active-color !default;
+$pagination-active-bg:          $component-active-bg !default;
+$pagination-active-border:      $component-active-bg !default;
 
 $pagination-inactive-color:     $gray-500 !default;
 $pagination-inactive-bg:        $gray-50 !default;
@@ -637,25 +655,25 @@ $sidebar-switch-size:           18px !default;
 
 // Flash messages (alerts)
 
-$flash-success-bg:              shade($brand-success, 400) !default;
-$flash-success-border:          shade($brand-success, 500) !default;
-$flash-success-text:            $white !default;
-$flash-success-link:            $white !default;
+$flash-success-bg:              shade($brand-success, 200) !default;
+$flash-success-border:          shade($brand-success, 250) !default;
+$flash-success-text:            shade($brand-success, 900) !default;
+$flash-success-link:            shade($brand-success, 950) !default;
 
 $flash-info-bg:                 shade($brand-info, 100) !default;
 $flash-info-border:             shade($brand-info, 200) !default;
-$flash-info-text:               shade($brand-info, 800) !default;
-$flash-info-link:               shade($brand-info, 900) !default;
+$flash-info-text:               shade($brand-info, 900) !default;
+$flash-info-link:               shade($brand-info, 950) !default;
 
-$flash-warning-bg:              shade($brand-warning, 200) !default;
-$flash-warning-border:          shade($brand-warning, 300) !default;
-$flash-warning-text:            shade($brand-warning, 800) !default;
-$flash-warning-link:            shade($brand-warning, 900) !default;
+$flash-warning-bg:              shade($brand-warning, 100) !default;
+$flash-warning-border:          shade($brand-warning, 200) !default;
+$flash-warning-text:            shade($brand-warning, 900) !default;
+$flash-warning-link:            shade($brand-warning, 950) !default;
 
-$flash-error-bg:                $brand-danger !default;
-$flash-error-border:            shade($brand-danger, 600) !default;
-$flash-error-text:              $white !default;
-$flash-error-link:              $white !default;
+$flash-error-bg:                shade($brand-danger, 200) !default;
+$flash-error-border:            shade($brand-danger, 250) !default;
+$flash-error-text:              shade($brand-danger, 900) !default;
+$flash-error-link:              shade($brand-danger, 950) !default;
 
 
 // Progress bars

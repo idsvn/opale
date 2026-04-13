@@ -1,4 +1,5 @@
 @use "sass:color";
+@use "sass:map";
 @use "../variables";
 @use "../mixins/shadows";
 @use "../vendor/bootstrap/mixins/text-truncate";
@@ -17,6 +18,14 @@ table.gantt-table {
   td {
     padding: 0;
     vertical-align: top;
+  }
+}
+
+@if variables.$color-trackers {
+  @each $tracker-id, $tracker-colors in variables.$tracker-colors-map {
+    #wrapper .gantt-table .context-menu-selection a.issue.tracker-#{$tracker-id} {
+      color: map.get($tracker-colors, color) !important;
+    }
   }
 }
 
@@ -229,10 +238,10 @@ td.gantt_selected_column .gantt_hdr,
 
 .version-behind-schedule,
 .issue-behind-schedule {
-  color: variables.$brand-warning;
+  color: color.adjust(variables.$brand-warning, $lightness: -20%);
 
   .context-menu-selection & {
-    color: variables.$brand-text;
+    color: color.adjust(variables.$brand-primary, $lightness: -90%);
   }
 }
 
@@ -242,7 +251,7 @@ td.gantt_selected_column .gantt_hdr,
   color: variables.$brand-danger;
 
   .context-menu-selection & {
-    color: variables.$brand-text;
+    color: color.adjust(variables.$brand-primary, $lightness: -90%);
   }
 }
 
@@ -285,8 +294,4 @@ td.gantt_selected_column .gantt_hdr,
       }
     }
   }
-}
-
-#gantt_area .context-menu-selection.tooltip a.issue {
-  color: #fff !important;
 }

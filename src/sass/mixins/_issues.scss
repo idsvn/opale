@@ -67,7 +67,7 @@
 
   tr#{$parent} .id > a {
     &::before {
-      color: color.mix($color, $background, 50%);
+      color: $color;
     }
   }
 }
