@@ -573,11 +573,11 @@ $flyout-menu-header-bg:         shade($header-bg, 800) !default;
 $flyout-menu-header-border:     shade($header-bg, 800) !default;
 $flyout-menu-header-text:       $white !default;
 
-$quick-search-label-bg:         $top-menu-bg;
+$quick-search-label-bg:         $top-menu-bg !default;
 $quick-search-width:            200px !default;
 $quick-search-border:           $input-border !default;
 $quick-search-border-focus:     shade($header-bg, 800) !default;
-$quick-search-border-radius:    0 $border-radius-small $border-radius-small 0;
+$quick-search-border-radius:    0 $border-radius-small $border-radius-small 0 !default;
 $quick-search-box-width:        300px !default;
 $quick-search-dropdown-bg:      $body-bg !default;
 $quick-search-dropdown-border:  $gray-400 !default;
