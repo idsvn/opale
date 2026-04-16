@@ -352,16 +352,18 @@ body {
         }
       }
 
-      #admin-menu {
-        a {
-          background-position: 8px center !important; // stylelint-disable-line declaration-no-important
+      #admin-menu li {
+        & > a {
+          padding-left: variables.$padding-large-horizontal;
 
-          &.additionals {
-            padding-left: 32px !important; // stylelint-disable-line declaration-no-important
+          .icon-svg {
+            margin-top: -5px;
+          }
+        }
 
-            &::before {
-              margin-right: variables.$padding-small-vertical;
-            }
+        & > a:not(.selected) {
+          .icon-svg {
+            stroke: variables.$flyout-menu-text;
           }
         }
       }
