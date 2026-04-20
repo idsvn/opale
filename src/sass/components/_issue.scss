@@ -677,7 +677,9 @@ div.thumbnails {
       }
 
       .journal-info {
-        margin-left: -(variables.$bubble-padding-horizontal + 14px);
+        &:has(.gravatar, .avatar) {
+          margin-left: -(variables.$bubble-padding-horizontal + 14px);
+        }
 
         > .gravatar,
         > span[role="img"].avatar {
@@ -687,7 +689,8 @@ div.thumbnails {
     }
   }
 
-  > p {
+  > p,
+  .journal-content > p {
     padding-right: variables.$bubble-padding-horizontal;
     padding-left: variables.$bubble-padding-horizontal;
 
@@ -699,7 +702,9 @@ div.thumbnails {
   form,
   .wiki,
   .details,
-  .details + p {
+  .details + p,
+  .journal-content > p,
+  .journal-details {
     border-top: 1px solid variables.$bubble-border;
   }
 
@@ -732,8 +737,15 @@ div.thumbnails {
     }
   }
 
-  .wiki {
+  .wiki,
+  .journal-content > p,
+  .journal-content .journal-details {
+    margin-bottom: 0;
     padding: variables.$issue-padding;
+  }
+
+  .journal-content .journal-details {
+    padding-left: calc(variables.$bubble-padding-horizontal + variables.$issue-padding);
   }
 
   form {
