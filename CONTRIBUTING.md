@@ -35,7 +35,7 @@ This way, before making your changes, you can run the `npm run watch` command. T
 > In any case, thanks to [Husky](https://typicode.github.io/husky/), all your changes should be linted and built automatically with each commit.
 
 > [!IMPORTANT]
-> If you are customizing Opale in a production environment, to view your changes in Redmine 6.x, you will need to run the command `bundle exec rake assets:precompile RAILS_ENV=production` or restart your server.
+> If you are customizing Opale in a production environment, to view your changes, you will need to run the command `bundle exec rake assets:precompile RAILS_ENV=production` or restart your server.
 
 ### Commit messages
 
@@ -47,7 +47,4 @@ This way, before making your changes, you can run the `npm run watch` command. T
 
 ### Base branch
 
-**Choose the proper base branch to merge your changes:**
-
-- If your changes concern _Redmine 6.x_, choose the branch `redmine-6.x`.
-- If your changes concern _Redmine 5.x_, choose the branch `redmine-5.x`.
+Choose the `master` branch to merge your changes.
