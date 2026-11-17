@@ -123,7 +123,6 @@ img {
 .splitcontent {
   display: flex;
   flex-wrap: wrap;
-  overflow: auto;
 }
 
 .splitcontentleft,
@@ -158,7 +157,9 @@ img {
   }
 
   > ul.watchers {
-    margin-left: variables.$sidebar-padding-horizontal;
+    @if variables.$sidebar-position == "left" {
+      margin-left: variables.$sidebar-padding-horizontal;
+    }
 
     > li {
       @include clearfix.clearfix;
@@ -168,8 +169,6 @@ img {
 
       @if variables.$sidebar-position == "left" {
         padding-right: variables.$sidebar-padding-horizontal;
-      } @else {
-        padding-left: variables.$sidebar-padding-horizontal;
       }
 
       > a:not(.icon-only) {
@@ -194,6 +193,7 @@ img {
       }
 
       img.gravatar {
+        top: -.1em;
         margin-right: .5em;
       }
 
@@ -214,8 +214,13 @@ img {
     display: block;
   }
 
-  .gravatar {
-    margin-right: variables.$padding-small-vertical;
+  img.gravatar {
+    top: -.1em;
+    margin-right: .5em;
+  }
+
+  .avatar:not(.gravatar) {
+    margin: 0 .5em .5em 0;
   }
 }
 
@@ -348,7 +353,7 @@ a.close-icon:not(:has(svg)) {
   th.line-num {
     border-color: color.adjust(variables.$body-bg, $lightness: -10%);
     background-color: color.adjust(variables.$body-bg, $lightness: -5%);
-    color: variables.$gray-750;
+    color: variables.$text-color-light;
   }
 
   th.line-num,
@@ -528,7 +533,7 @@ table.projects {
 
   tbody tr {
     &.subtotal {
-      color: variables.$gray-750;
+      color: variables.$text-color-light;
       font-style: italic;
 
       td.hours {
@@ -738,7 +743,7 @@ div#version-summary {
 
 tr.message {
   &.locked {
-    color: variables.$gray-750;
+    color: variables.$text-color-light;
   }
 
   &.sticky td.subject {
@@ -799,11 +804,11 @@ div.table-list.boards {
     > p {
       margin-bottom: 0;
       padding: variables.$bubble-padding-vertical variables.$bubble-padding-horizontal;
-      color: variables.$gray-750;
+      color: variables.$text-color-light;
       font-size: variables.$font-size-list;
 
       a {
-        color: variables.$gray-900;
+        color: variables.$text-color-dark;
 
         &.user {
           font-weight: variables.$font-weight-bold;
@@ -933,7 +938,7 @@ div.table-list.boards {
   #content > h2,
   #content > h4 {
     + p {
-      color: variables.$gray-750;
+      color: variables.$text-color-light;
 
       em {
         font-style: normal;
@@ -969,7 +974,7 @@ div.table-list.boards {
 
     .updated_on {
       margin-block-end: calc(variables.$line-height-computed / 2);
-      color: variables.$gray-750;
+      color: variables.$text-color-light;
 
       em {
         font-style: normal;
@@ -1053,7 +1058,7 @@ div.news .reaction {
 }
 
 .author {
-  color: variables.$gray-750;
+  color: variables.$text-color-light;
 
   .flyout-menu & {
     color: inherit;

@@ -107,7 +107,9 @@ $state-danger:                  shade($brand-danger, 100) !default;
 // Scaffolding
 
 $body-bg:                       $white !default;
+$text-color-light:              $gray-750 !default;
 $text-color:                    $gray-800 !default;
+$text-color-dark:               $gray-950 !default;
 
 $link-color:                    $blue !default;
 $link-hover-color:              $addy-orange-600 !default; // Addy accent hover
@@ -510,6 +512,11 @@ $icon-color-map: (
 ) !default;
 
 
+// Admin menu icons
+
+$admin-menu-icon-color:         $gray-900 !default;
+
+
 // Highlights
 
 $highlight-bg:                  shade($yellow, 200) !default;
@@ -659,7 +666,9 @@ $sidebar-link-active-side:      $addy-orange !default; // Addy accent stripe
 $sidebar-link-active-text:      $gray-950 !default;
 $sidebar-switch-top-position:   1px !default;
 $sidebar-switch-size:           18px !default;
-
+$sidebar-switch-bg:             $gray-200 !default;
+$sidebar-switch-hover-bg:       $gray-300 !default;
+$sidebar-switch-border-color:   $gray-700 !default;
 
 // Flash messages (alerts)
 
@@ -720,7 +729,9 @@ $tooltip-link:                  $link-color !default;
 
 $issue-bg:                      $gray-50 !default;
 $issue-border:                  $gray-500 !default;
+$issue-text-light:              $text-color-light !default;
 $issue-text:                    $text-color !default;
+$issue-text-dark:               $text-color-dark !default;
 
 $issue-padding:                 15px !default;
 $issue-gravatar-size:           50px !default;
@@ -728,6 +739,27 @@ $issue-heading-size:            1.75 !default;
 
 $issue-attribute-padding-v:     3px !default;
 $issue-attribute-padding-h:     5px !default;
+
+
+// Context menu
+
+$context-menu-bg:               $body-bg !default;
+$context-menu-text:             $link-color !default;
+$context-menu-hover-bg:         $pagination-hover-bg !default;
+$context-menu-disabled-text:    $text-color-light !default;
+
+
+// Gantt
+
+$gantt-header-bg:               $gray-200 !default;
+$gantt-header-border:           $gray-500 !default;
+$gantt-header-text:             $gray-700 !default;
+
+
+// jsToolBar
+
+$jstoolbar-icon-filter: none !default;
+$jstoolbar-hover-bg: color.adjust($tab-hover-bg, $lightness: -3%) !default;
 
 
 // Initials avatars colors
@@ -841,12 +873,19 @@ $redmine-responsive-min:        900px !default;
 
 $login-form-width:              24em !default;
 $login-form-label-width:        8em !default;
+$login-form-bg:                 shade($yellow, 100) !default;
+$login-form-border-color:       shade($yellow, 300) !default;
 $login-form-box-breakpoint:     $screen-xs-min !default;
 $login-form-adjustments-map: (
   -2: da en en-GB ko pl tr uk,
   1: fr hr nl sr-YU sv,
   2: el eu lt pt sk sr th
 ) !default;
+
+
+// Footer
+
+$footer-border-color:           $gray-400 !default;
 
 
 // Content widths

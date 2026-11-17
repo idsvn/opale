@@ -167,7 +167,6 @@ body {
 
       &__avatar {
         img.gravatar {
-          top: 0;
           padding: 5px;
         }
       }
@@ -598,12 +597,6 @@ body {
 
     #tracker_project_ids.box:last-child {
       margin-bottom: variables.$line-height-computed;
-    }
-  }
-
-  @media screen and (max-width: variables.$screen-md-max) {
-    #main-menu.tabs {
-      overflow: hidden;
     }
   }
 

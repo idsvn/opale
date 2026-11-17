@@ -234,8 +234,8 @@
 #footer {
   margin: 0 variables.$padding-side;
   padding: variables.$line-height-computed 0;
-  border-top: 1px solid variables.$gray-400;
-  color: variables.$gray-750;
+  border-top: 1px solid variables.$footer-border-color;
+  color: variables.$text-color-light;
   font-size: variables.$font-size-small;
 
   @if variables.$css-grid-layout {
@@ -251,7 +251,7 @@
 
     #top-menu,
     #header,
-    #main-menu ul,
+    #main-menu ul:not(.menu-children),
     #main,
     #footer {
       width: variables.$width-sm;
@@ -278,7 +278,7 @@
   @media screen and (min-width: variables.$screen-md-min) {
     #top-menu,
     #header,
-    #main-menu ul,
+    #main-menu ul:not(.menu-children),
     #main,
     #footer {
       width: variables.$width-md;
@@ -288,7 +288,7 @@
   @media screen and (min-width: variables.$screen-lg-min) {
     #top-menu,
     #header,
-    #main-menu ul,
+    #main-menu ul:not(.menu-children),
     #main,
     #footer {
       width: variables.$width-lg;

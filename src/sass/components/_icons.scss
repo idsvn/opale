@@ -229,7 +229,7 @@ span.icon-label {
 
 // Buttons icons
 
-.icon,
+.icon:not(.group),
 .icon-only {
   display: inline-flex;
   align-items: center;
@@ -412,7 +412,7 @@ div.wiki {
   li {
     > a {
       .icon-svg {
-        stroke: variables.$gray-900;
+        stroke: variables.$admin-menu-icon-color;
       }
     }
   }
