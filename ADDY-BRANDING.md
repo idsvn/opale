@@ -34,6 +34,20 @@ issues stay scannable.
 The Addy tokens are defined as `$addy-*` variables at the top of the Colors block
 in `_variables.scss`.
 
+## Behaviour divergences from upstream — keep these through a merge
+
+Not branding, but they live in the same fork and an upstream merge will silently
+undo them. Check this list after every merge from `gagnieray/opale`.
+
+| File | Upstream | Addy | Why |
+|---|---|---|---|
+| `src/sass/components/_forms.scss` — `.tabular label` | `user-select: none` | **removed** (20/11/2026) | Clicking a field label focuses its input (correct `<label for>` behaviour), but `user-select: none` also made the label text impossible to highlight — so on the HR screens nobody could copy a field name or the read-only value beside it. Upstream's `none` only avoids an accidental highlight on a fast double-click; that is a cosmetic nicety traded against breaking Ctrl+C. The focus-on-click behaviour is unchanged. |
+
+`redmine_addy_hr`'s `assets/stylesheets/hr_ui.css` carries a matching
+`user-select: text` block over `.box.tabular label` as a safety net, so the HR
+screens stay usable even if this divergence is lost in a future merge. The rest
+of Redmine would not be covered — hence this table.
+
 ## Rebuild
 
 The theme compiles `src/sass/**` → `stylesheets/application.css`. You do **not**

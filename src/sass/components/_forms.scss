@@ -339,7 +339,18 @@ em.info {
     float: left;
     line-height: variables.$line-height-base;
     text-align: right;
-    user-select: none;
+
+    // Addy: upstream đặt `user-select: none` ở đây. Bỏ đi, có chủ ý.
+    //
+    // Nhãn của một ô form là nơi người ta đọc TÊN TRƯỜNG, và trên các màn
+    // hình HR (hồ sơ nhân viên, hợp đồng, bảng lương) người dùng thường
+    // xuyên cần bôi đen để chép ra. `user-select: none` làm việc đó bất khả
+    // thi: bấm vào nhãn thì con trỏ nhảy vào ô input (hành vi đúng của
+    // `<label for>`) mà chữ thì không bôi đen được, nên không copy nổi.
+    //
+    // Cái `none` của upstream chỉ để tránh bôi đen khi bấm NHANH HAI LẦN vào
+    // nhãn — một phiền toái thẩm mỹ, đổi lấy việc không copy được là lỗ vốn.
+    // Hành vi bấm-để-focus KHÔNG đổi; chỉ chữ là bôi đen được trở lại.
 
     &.floating {
       width: 270px;
